@@ -12,6 +12,7 @@ class TasksController extends Controller
         $tasks = auth()->user()->tasks();
         return view('dashboard', compact('tasks'));
     }
+
     public function add()
     {
         return view('add');
@@ -31,7 +32,6 @@ class TasksController extends Controller
 
     public function edit(Task $task)
     {
-
         if (auth()->user()->id == $task->user_id)
         {
             return view('edit', compact('task'));
@@ -43,7 +43,7 @@ class TasksController extends Controller
 
     public function update(Request $request, Task $task)
     {
-        if(isset($_POST['delete'])) {
+        if (isset($_POST['delete'])) {
             $task->delete();
             return redirect('/dashboard');
         }
