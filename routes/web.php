@@ -26,8 +26,8 @@ Route::middleware([
     Route::get('/dashboard', [TasksController::class, 'index'])->name('dashboard');
 
     Route::get('/task', [TasksController::class, 'add']);
-    Route::get('/task', [TasksController::class, 'create']);
+    Route::post('/task', [TasksController::class, 'create']);
 
     Route::get('/task/{task}', [TasksController::class, 'edit']);
-    Route::get('/task/{task}', [TasksController::class, 'update']);
+    Route::post('/task/{task}', [TasksController::class, 'update']);
 });

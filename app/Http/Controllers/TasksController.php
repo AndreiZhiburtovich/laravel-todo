@@ -32,11 +32,9 @@ class TasksController extends Controller
 
     public function edit(Task $task)
     {
-        if (auth()->user()->id == $task->user_id)
-        {
+        if (auth()->user()->id == $task->user_id) {
             return view('edit', compact('task'));
-        }
-        else {
+        } else {
             return redirect('/dashboard');
         }
     }
@@ -46,9 +44,7 @@ class TasksController extends Controller
         if (isset($_POST['delete'])) {
             $task->delete();
             return redirect('/dashboard');
-        }
-        else
-        {
+        } else {
             $this->validate($request, [
                 'description' => 'required'
             ]);
