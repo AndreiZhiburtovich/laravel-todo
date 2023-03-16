@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\TasksController;
+use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('main');
 });
 
 Route::middleware([
@@ -23,11 +23,14 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', [TasksController::class, 'index'])->name('dashboard');
+    Route::get('dashboard', [TaskController::class, 'index'])->name('dashboard');
 
-    Route::get('/task', [TasksController::class, 'add']);
-    Route::post('/task', [TasksController::class, 'create']);
+    Route::get('tasks/create', [TaskController::class, 'create']);
+    Route::post('tasks', [TaskController::class, 'store']);
 
-    Route::get('/task/{task}', [TasksController::class, 'edit']);
-    Route::post('/task/{task}', [TasksController::class, 'update']);
+    Route::get('tasks/{task}/edit', [TaskController::class, 'edit']);
+    Route::put('task/{task}', [TaskController::class, 'update']);
+
+    Route::delete('tasks/{task}', [TaskController::class, 'destroy']);
+    Route::delete('tasks', [TaskController::class, 'destroyAll']);
 });
