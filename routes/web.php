@@ -31,6 +31,8 @@ Route::middleware([
     Route::get('tasks/{task}/edit', [TaskController::class, 'edit']);
     Route::put('task/{task}', [TaskController::class, 'update']);
 
+    Route::patch('tasks/{task}', [TaskController::class, 'mark']);
+
     Route::delete('tasks/{task}', [TaskController::class, 'destroy']);
     Route::delete('tasks', [TaskController::class, 'destroyAll']);
 });
