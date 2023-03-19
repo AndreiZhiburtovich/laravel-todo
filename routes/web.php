@@ -24,6 +24,9 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('dashboard', [TaskController::class, 'index'])->name('dashboard');
+    Route::get('tasks', function () {
+        return redirect('dashboard');
+    });
 
     Route::get('tasks/create', [TaskController::class, 'create']);
     Route::post('tasks', [TaskController::class, 'store']);

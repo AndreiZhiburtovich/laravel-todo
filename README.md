@@ -9,6 +9,6 @@
 
 ## To Do List (powered by Laravel)
 
-This is a simple, but robust and handy web application, powered by Laravel, Blade and jQuery (Ajax).<br>
-You can integrate it with CRM, social network, etc. Feel free to change everything you like in this app and use it as you wish.<br>You can change this text in the template file: resources/views/main.blade.php (path from project root).<br>
+This is a simple, but robust and handy web application, powered by Laravel, Blade and jQuery (Ajax), based on REST API.<br>
+You can integrate it (or any parts of it) in your own projects. Feel free to change everything you like in this app and use it as you wish.<br>You can change this text in the template file: resources/views/main.blade.php (path from project root).<br>
 Author: Andrei Zhiburtovich, full stack web developer (BE heavy) https://github.com/AndreiZhiburtovich
