@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Task;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 /**
  * Class TaskController
@@ -13,9 +15,9 @@ class TaskController extends Controller
 {
     /**
      * Display a listing of the resource.
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     * @return \Illuminate\Contracts\View\View
      */
-    public function index()
+    public function index(): \Illuminate\Contracts\View\View
     {
         $tasks = auth()->user()->tasks();
         return view('dashboard', compact('tasks'));
@@ -23,9 +25,9 @@ class TaskController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     * @return \Illuminate\Contracts\View\View
      */
-    public function create()
+    public function create(): \Illuminate\Contracts\View\View
     {
         return view('create');
     }
@@ -33,10 +35,10 @@ class TaskController extends Controller
     /**
      * Store a newly created resource in storage.
      * @param Request $request
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return RedirectResponse
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $this->validate($request, [
             'description' => 'required'
@@ -51,9 +53,9 @@ class TaskController extends Controller
     /**
      * Show the form for editing the specified resource.
      * @param Task $task
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return \Illuminate\Contracts\View\View|RedirectResponse
      */
-    public function edit(Task $task)
+    public function edit(Task $task): \Illuminate\Contracts\View\View|RedirectResponse
     {
         if (auth()->user()->id == $task->user_id) {
             return view('edit', compact('task'));
@@ -66,10 +68,10 @@ class TaskController extends Controller
      * Update the specified resource in storage.
      * @param Request $request
      * @param Task $task
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return RedirectResponse
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function update(Request $request, Task $task)
+    public function update(Request $request, Task $task): RedirectResponse
     {
         $this->validate($request, [
             'description' => 'required'
@@ -94,9 +96,9 @@ class TaskController extends Controller
     /**
      * Remove the specified resource from storage.
      * @param Task $task
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return RedirectResponse
      */
-    public function destroy(Task $task)
+    public function destroy(Task $task): RedirectResponse
     {
         $task->delete();
         return redirect('/dashboard');
@@ -104,9 +106,9 @@ class TaskController extends Controller
 
     /**
      * Remove all resources from storage for current user.
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return RedirectResponse
      */
-    public function destroyAll()
+    public function destroyAll(): RedirectResponse
     {
         Task::where('user_id', auth()->user()->id)->delete();
         return redirect('/dashboard');
