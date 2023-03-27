@@ -19,7 +19,7 @@
                     <div class="form-group">
                         <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-4 mt-2 rounded">Add Task</button>
                     </div>
-                    {{ csrf_field() }}
+                    @csrf
                 </form>
 
             </div>
