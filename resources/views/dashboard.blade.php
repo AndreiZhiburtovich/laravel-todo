@@ -22,7 +22,7 @@
                                 Delete All Tasks
                             </button>
                             {{ method_field('DELETE') }}
-                            {{ csrf_field() }}
+                            @csrf
                         </form>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                                 <form action="/tasks/{{ $task->id }}" onsubmit="return confirm('Do you really want to delete this option?')" method="POST" class="inline-flex">
                                     <button type="submit" class="bg-red-500 hover:bg-red-700 text-white py-1 px-4 mt-1 mr-1 rounded focus:outline-none focus:shadow-outline">Delete</button>
                                     {{ method_field('DELETE') }}
-                                    {{ csrf_field() }}
+                                    @csrf
                                 </form>
 
                             </td>

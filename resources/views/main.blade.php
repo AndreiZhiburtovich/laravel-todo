@@ -29,7 +29,7 @@
                     <div class="w-96 scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none focus:outline focus:outline-2 focus:outline-red-500">
                         <h2 class="w-80 mt-0 mb-3 text-xl text-center font-semibold text-gray-900 dark:text-white">To Do List (powered by Laravel)</h2>
                         <div class="mt-4 text-gray-500 dark:text-gray-400 leading-relaxed">
-                            This is a simple, but robust and handy web application, powered by <b>Laravel</b>, <b>Blade</b> and <b>jQuery (Ajax)</b>.<br>You can integrate it with CRM, social network, etc. Feel free to change everything you like in this app and use it as you wish.
+                            This is a simple, but robust and handy web application, powered by <b>Laravel</b>, <b>Blade</b> and <b>jQuery (Ajax)</b>, based on REST API.<br>You can integrate it (or any parts of it) in your own projects. Feel free to change everything you like in this app and use it as you wish.
                             You can change this text in the template file: <b>resources/views/main.blade.php</b> (path from project root).
                             <br><i><b>Author:</b> Andrei Zhiburtovich, full stack web developer (BE heavy) <a class="underline" href="https://github.com/AndreiZhiburtovich" target="_blank">https://github.com/AndreiZhiburtovich</a></i>
                         @if (Route::has('login'))
