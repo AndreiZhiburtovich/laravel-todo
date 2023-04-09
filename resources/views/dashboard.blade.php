@@ -29,7 +29,7 @@
                 <table class="w-full text-md rounded mb-4">
                     <thead>
                     <tr class="border-b">
-                        <th class="text-left p-3 px-5 p-2 px-4 pl-3">Task</th>
+                        <th class="text-left p-3 px-5 p-2 px-4 pl-3">Tasks</th>
                         <th class="text-right p-3 px-5 p-2 px-4 pl-3">Actions</th>
                         <th></th>
                     </tr>
