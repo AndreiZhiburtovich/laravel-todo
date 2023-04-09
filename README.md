@@ -10,5 +10,6 @@
 ## To Do List (powered by Laravel)
 
 This is a simple, but robust and handy web application, powered by Laravel, Blade and jQuery (Ajax), based on REST API.<br>
-You can integrate it (or any parts of it) into your own projects. Feel free to change everything you like in this app and use it as you wish.<br>You can change this text in the template file: resources/views/main.blade.php (path from project root).<br>
+You can integrate it (or any parts of it) into your own projects. Feel free to change everything you like in this app and use it as you wish.<br>
+You can try this app on http://laravel-todo.andreiz.ru/ <br>
 Author: Andrei Zhiburtovich, full stack web developer (BE heavy) https://github.com/AndreiZhiburtovich
